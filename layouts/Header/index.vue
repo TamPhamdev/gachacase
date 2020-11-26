@@ -89,7 +89,7 @@
     margin: auto;
   }
   .header {
-    background-image: url('~@/assets/images/bg-header.png');
+    background-image: url('~assets/images/bg-header.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

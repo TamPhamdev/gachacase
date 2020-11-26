@@ -40,8 +40,8 @@ jobs:
 
       - name: Install dependencies 👨🏻‍💻
         run: npm install
-
-      - run: npm run generate
+      - name: Build
+        run: npm run build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:

@@ -6,7 +6,7 @@
   >
     <div
       class="case__main-thumb"
-      :style="userStyle"
+      :style="[generateBackgroundImage,userStyle]"
     >
       <img
         ref="image_thumb"
@@ -38,7 +38,7 @@
         text: 'Price',
         lists: mock,
         boxBackground: box,
-        color: 'green',
+        color: ['green', 'crimson', 'white', 'orange', 'blue', 'purple', 'pink', 'yellow'],
       }
     },
     mounted () {
@@ -53,11 +53,11 @@
     computed: {
       userStyle () {
         return {
-          '--color-image': this.color
+          '--color-image': this.color[Math.floor((Math.random() * 7) + 1)]
         }
       },
       generateBackgroundImage () {
-        return this.hasBoxBackground && `background-image: url(${this.boxBackground[this.randomBox].url})`
+        return this.hasBoxBackground && { 'background-image': `url(${this.boxBackground[this.randomBox].url})` }
       },
       random () {
         return Math.floor((Math.random() * 39) + 1)
