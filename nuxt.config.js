@@ -1,7 +1,7 @@
 // const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
-  target: 'server',
+  target: 'static',
   router: {
     base: '/app/',
   },
