@@ -37,8 +37,9 @@ jobs:
             ${{ runner.os }}-node-
       - name: Prepare
         run: rm -rf ./node_modules ./package-lock.json
+
       - name: Install dependencies 👨🏻‍💻
-        run: npm ci
+        run: npm install
 
       - run: npm run generate
       - name: Deploy
