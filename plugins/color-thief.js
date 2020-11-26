@@ -1,2 +1,2 @@
-import colorThief from 'color-thief'
-export default colorThief
+// import colorThief from 'color-thief'
+// export default colorThief

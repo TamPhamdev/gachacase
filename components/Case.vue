@@ -24,7 +24,7 @@
 </template>
 
 <script>
-  import colorThief from "color-thief"
+  // import colorThief from "color-thief"
   import box from "@/box.json"
   import mock from "@/mock.json"
   export default {
