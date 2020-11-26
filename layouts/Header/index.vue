@@ -17,8 +17,8 @@
         <div class="cursor-pointer header-signin w-56 h-20 text-center">
           <a class="flex items-center justify-center flex-col">
             <svg-icon
-              icon-class="steam"
-              style="width:1.5rem; height:1.5rem;"
+              name="steam"
+              style="width:1.5rem; height:1.5rem;color: #fff;"
             />
             <p> Sign in with </p>
             <p class="tracking-widest uppercase font-semibold ">steam</p>
@@ -40,10 +40,11 @@
 </template>
 
 <script>
-  // import StickyMenu from "./StickyMenu";
-  // import Hamburger from "./Hamburger";
-  // import Stat from "./Stat";
-  // import Recent from "./Recent";
+  import StickyMenu from "./StickyMenu";
+  import Hamburger from "./Hamburger";
+  import Stat from "./Stat";
+  import Recent from "./Recent";
+  import Steam from "@/assets/icons/svg/steam.svg";
   export default {
     name: "Header",
     data () {
@@ -51,12 +52,13 @@
         isVisibleStickyMenu: false,
       }
     },
-    // components: {
-    //   Hamburger,
-    //   Stat,
-    //   Recent,
-    //   StickyMenu
-    // },
+    components: {
+      Steam,
+      Hamburger,
+      Stat,
+      Recent,
+      StickyMenu
+    },
     computed: {
       stickyMenu () {
         return this.isVisibleStickyMenu ? 'sticky-menu-active' : 'sticky-menu'
@@ -82,7 +84,7 @@
 </script>
 
 <style lang="scss" scoped>
-  // @import '~@/assets/styles/variables.scss';
+  @import '~@/assets/styles/variables.scss';
   .dw-container {
     margin: auto;
   }
@@ -121,13 +123,13 @@
     background: rgba(26, 28, 36, 0.8);
   }
   .sticky-menu {
-    opacity: 0;
-    transform: translateY(-70px);
-    transition: all 0.2s linear;
+    // opacity: 0;
+    transform: translateY(-200px);
+    transition: transform 0.3s linear;
     &-active {
-      opacity: 1;
+      // opacity: 1;
       transform: translateY(0px);
-      transition: all 0.2s linear;
+      transition: transform 0.3s linear;
     }
   }
 </style>

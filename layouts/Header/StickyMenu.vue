@@ -15,7 +15,7 @@
       <div class="cursor-pointer header-signin w-56 h-20 text-center">
         <a class="flex items-center justify-center flex-col">
           <svg-icon
-            icon-class="steam"
+            name="steam"
             style="width:1.5rem; height:1.5rem;"
           />
           <p> Sign in with </p>

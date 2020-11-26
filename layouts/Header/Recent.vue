@@ -5,6 +5,8 @@
 
     </div>
     <VueSlickCarousel
+      @init="initHandler"
+      @reInit="applyResponsiveSettings"
       v-bind="settings"
       class="recent-carousel"
     >
@@ -27,7 +29,7 @@
     components: { VueSlickCarousel, RecentItem },
     data () {
       return {
-
+        areResonsiveSettingsApplied: false,
         settings: {
           autoplay: true,
           arrows: false,
@@ -37,9 +39,25 @@
           slidesToShow: 8,
           draggable: false,
           rtl: true,
-          responsive: [{ breakpoint: 1280, settings: { slidesToShow: 6 } }, { breakpoint: 1024, settings: { slidesToShow: 4 } }, { breakpoint: 768, settings: { slidesToShow: 3 } }],
-        }
+          responsive: [],
+          // responsive: [{ breakpoint: 1280, settings: { slidesToShow: 6 } }, { breakpoint: 1024, settings: { slidesToShow: 4 } }, { breakpoint: 768, settings: { slidesToShow: 3 } }],
+        },
+        responsiveSettings: [{ breakpoint: 1280, settings: { slidesToShow: 6 } }, { breakpoint: 1024, settings: { slidesToShow: 4 } }, { breakpoint: 768, settings: { slidesToShow: 3 } }],
       }
+    },
+
+    methods: {
+      initHandler () {
+        if (this.areResonsiveSettingsApplied === false) {
+          this.applyResponsiveSettings()
+        }
+      },
+      applyResponsiveSettings () {
+        // TODO: re-render need test
+        this.settings.responsive = this.responsiveSettings
+        this.settings.slidesToShow = 8
+        this.areResonsiveSettingsApplied = true
+      },
     }
   }
 </script>
@@ -47,7 +65,7 @@
 <style lang="scss" scoped>
   .recent-head {
     &:before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
@@ -58,7 +76,7 @@
   }
   // Remove outline when focus of carousel
   .recent-carousel {
-    /deep/ .slick-track div {
+    .slick-track div {
       &:focus {
         outline: none;
       }

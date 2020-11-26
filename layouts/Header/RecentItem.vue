@@ -3,14 +3,17 @@
     class="recent recent-wrapper"
     style="height: 100%;"
   >
-    <a class="recent__item-live flex justify-center relative">
+    <nuxt-link
+      to="/"
+      class="recent__item-live flex justify-center relative"
+    >
       <img :src="lists[random].url">
       <div class="recent__item-info absolute">
         <p class="recent__item-info-name">Name</p>
         <p class="recent__item-info-user">User</p>
         <p class="recent__item-info-type">Type</p>
       </div>
-    </a>
+    </nuxt-link>
   </div>
 </template>
 
@@ -88,12 +91,12 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "~@/assets/styles/_variables.scss";
+  @import '~@/assets/styles/_variables.scss';
   .recent {
     &__item-live {
       background-size: 100% 100%;
       user-select: none;
-      background-image: url("~@/assets/images/bg-recent.png");
+      background-image: url('~@/assets/images/bg-recent.png');
       img {
         filter: drop-shadow(0 0 14px rgba(211, 44, 230, 0.5));
       }
